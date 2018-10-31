@@ -1,6 +1,7 @@
 package org.themoviedb.api.morepopularmoviesapp.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.view_movie_item.view.*
 import org.themoviedb.api.morepopularmoviesapp.R
 import org.themoviedb.api.morepopularmoviesapp.model.Movie
+import org.themoviedb.api.morepopularmoviesapp.ui.MovieDatailActivity
 import java.security.AccessController.getContext
 
 class MovieAdapter(val items: List<Movie>, val context: Context) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
@@ -35,10 +37,18 @@ class MovieAdapter(val items: List<Movie>, val context: Context) : RecyclerView.
                     }
 
                     override fun onError() {
-                        Toast.makeText(context, "An error ocorred ",Toast.LENGTH_SHORT ).show()
+                        Toast.makeText(context, "An error ocorred ", Toast.LENGTH_SHORT).show()
                     }
 
                 })
+
+        holder.imageView.setOnClickListener { view ->
+            var context: Context = view.context
+            var intent: Intent = Intent(view.context, MovieDatailActivity::class.java)
+            intent.putExtra(Intent.EXTRA_INITIAL_INTENTS, movie)
+            context.startActivity(intent)
+        }
+
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

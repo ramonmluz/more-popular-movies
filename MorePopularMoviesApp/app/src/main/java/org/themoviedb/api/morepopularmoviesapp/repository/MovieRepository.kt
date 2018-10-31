@@ -15,13 +15,4 @@ class MovieRepository(val movieDbApi: MovieDbApi) {
         }
         return movieDbApi.laodPopularMovies(pageNumber)
     }
-
-//    fun searchNextPage(isNextPage: Boolean): Observable<Movie>? {
-//
-//        if (isNextPage) {
-//            pageNumber++
-//        }
-//        return movieDbApi.laodPopularMovies(pageNumber)
-//    }
-
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MovieDatailActivity">
+
+    <ImageView
+        android:id="@+id/movieImageDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:contentDescription="@string/movie_image"
+        android:paddingLeft="@dimen/margin_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/local_movies" />
+
+    <TextView
+        android:id="@+id/releaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/text_size_medium"
+        android:textAppearance="?android:textAppearanceSmall"
+        app:layout_constraintLeft_toRightOf="@id/movieImageDetail"
+        app:layout_constraintTop_toTopOf="@id/movieImageDetail"
+        tools:text="data de Lançamento"/>
+
+    <TextView
+        android:id="@+id/overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/movieImageDetail"
+        tools:text="Movies Teste Search" />
+
+</android.support.constraint.ConstraintLayout>
