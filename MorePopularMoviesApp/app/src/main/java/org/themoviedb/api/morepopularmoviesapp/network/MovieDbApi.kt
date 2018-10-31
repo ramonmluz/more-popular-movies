@@ -37,9 +37,9 @@ class MovieDbApi() {
     }
 
 
-    fun laodPopularMovies(): Observable<Movie>? {
+    fun laodPopularMovies(pageNumber:Int): Observable<Movie>? {
         return service.loadPopularMovies("c4852d11798d35ebae996afb362875d4",
-                1)
+                pageNumber)
                 .flatMap { movieResults -> Observable.fromIterable(movieResults.results) }
                 .map { popularMovie ->
                     Movie(popularMovie.id, popularMovie.overview, popularMovie.posterPath,

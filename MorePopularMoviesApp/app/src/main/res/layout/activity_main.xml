@@ -4,46 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="@dimen/margin_small"
-        android:id="@+id/recyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content">
 
-    <ProgressBar
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/progressNextPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_alignBottom="@id/recyclerView">
+
+            <include
+                layout="@layout/view_progress"
+                android:layout_width="@dimen/loading_margin"
+                android:layout_height="@dimen/loading_margin"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <include
         android:id="@+id/progress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="parent"
+        layout="@layout/view_progress"
+        android:layout_width="@dimen/loading_margin"
+        android:layout_height="@dimen/loading_margin"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="parent"
-        tools:visibility="gone"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <!--<ProgressBar-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!---->
+    <!--android:visibility="gone"-->
+    <!--tools:visibility="gone"/>-->
 
     <LinearLayout
         android:id="@+id/areaErro"
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_card_erro_view"
-        android:layout_margin="@dimen/margin_medium"
         android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_medium"
         android:background="@color/colorPrimary"
+        android:onClick="reloadMovies"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="parent"
         android:visibility="gone"
-        tools:visibility="visible">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
 
         <ImageView
             android:layout_width="@dimen/load_img_size"
             android:layout_height="@dimen/load_img_size"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="@dimen/margin_big"
-            android:layout_marginLeft="@dimen/margin_medium"
-            android:layout_marginRight="@dimen/margin_big"
             android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginRight="@dimen/margin_big"
             android:contentDescription="@string/reload_image"
             android:src="@mipmap/ic_reload" />
 

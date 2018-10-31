@@ -64,6 +64,9 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
+    //ProgressBar
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+
     // Lifecycle
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
     implementation "android.arch.lifecycle:runtime:$lifecycle_version"

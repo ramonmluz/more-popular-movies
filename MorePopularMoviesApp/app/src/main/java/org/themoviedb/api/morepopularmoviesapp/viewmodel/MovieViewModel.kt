@@ -7,7 +7,7 @@ import org.themoviedb.api.morepopularmoviesapp.repository.MovieRepository
 
 class MovieViewModel(val movieRepository: MovieRepository) : ViewModel() {
 
-    fun loadMovies(): Observable<Movie>? {
-        return movieRepository.loadPopularMovies()
+    fun loadMovies(isNextPage: Boolean, isGenericError: Boolean): Observable<Movie>? {
+        return movieRepository.loadPopularMovies(isNextPage, isGenericError)
     }
 }
