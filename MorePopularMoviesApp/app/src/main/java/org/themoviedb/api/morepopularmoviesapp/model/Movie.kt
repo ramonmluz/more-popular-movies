@@ -9,6 +9,8 @@ data class Movie(
         @SerializedName("poster_path") val posterPath:String?,
         @SerializedName("original_title") val originalTitle:String,
         @SerializedName("vote_average") val voteAverage:String,
-        @SerializedName("release_date") val releaseDate:String
+        @SerializedName("release_date") val releaseDate:String,
+        @SerializedName("backdrop_path") val backdropPath:String?
+
 ): Serializable
 

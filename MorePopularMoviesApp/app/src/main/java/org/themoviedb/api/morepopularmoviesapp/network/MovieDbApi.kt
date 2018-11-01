@@ -43,7 +43,7 @@ class MovieDbApi() {
                 .flatMap { movieResults -> Observable.fromIterable(movieResults.results) }
                 .map { popularMovie ->
                     Movie(popularMovie.id, popularMovie.overview, popularMovie.posterPath,
-                            popularMovie.originalTitle, popularMovie.voteAverage, popularMovie.releaseDate)
+                            popularMovie.originalTitle, popularMovie.voteAverage, popularMovie.releaseDate, popularMovie.backdropPath)
                 }
     }
 
