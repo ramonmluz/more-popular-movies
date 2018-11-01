@@ -1,15 +1,18 @@
 package org.themoviedb.api.morepopularmoviesapp.network
 
+import android.content.Context
+import android.support.v4.content.ContextCompat
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.themoviedb.api.morepopularmoviesapp.R
 import org.themoviedb.api.morepopularmoviesapp.model.Movie
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MovieDbApi() {
+class MovieDbApi( val context: Context) {
     val service: MovieDbApiDef
 
     init {
@@ -38,7 +41,7 @@ class MovieDbApi() {
 
 
     fun laodPopularMovies(pageNumber:Int): Observable<Movie>? {
-        return service.loadPopularMovies("c4852d11798d35ebae996afb362875d4",
+        return service.loadPopularMovies(context.getString(R.string.key_movie_db),
                 pageNumber)
                 .flatMap { movieResults -> Observable.fromIterable(movieResults.results) }
                 .map { popularMovie ->

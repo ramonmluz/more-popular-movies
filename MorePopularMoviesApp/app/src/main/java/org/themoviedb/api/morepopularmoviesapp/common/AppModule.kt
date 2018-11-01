@@ -11,6 +11,6 @@ object AppModule {
     val viewModelModule: Module = org.koin.dsl.module.module {
         viewModel { MovieViewModel(get()) }
         single { MovieRepository(get()) }
-        single { MovieDbApi()}
+        single { MovieDbApi(get())}
     }
 }
