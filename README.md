@@ -17,7 +17,10 @@ Bibliotecas de Terceiros
 
 Biblioteca para acesso a Api do MovieDB
 -------------
-- **Retrofit** 
+- **Retrofit**
 
+Bibliotecas para Testes
+-------------
+- **Espresso - Teste Instrumentado**
  
 
