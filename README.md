@@ -1,4 +1,4 @@
-# more-popular-movies-challenge
+# more-popular-movies
 Projeto lista os filmes mais populares obtidos do The Movie Data Base API  
 ----------
 
